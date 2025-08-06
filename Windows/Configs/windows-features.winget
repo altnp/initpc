@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  resources:
+    - resource: PSDscResources/Service
+      id: Enable NetTCP Port Sharing
+      directives:
+        securityContext: elevated
+      settings:
+        Name: NetTCPPortSharing
+        State: Running
+        StartupType: Automatic
+
+    # Freezes on test as of 8.4.2025
+    #- resource: PSDscResources/WindowsOptionalFeature
+    #  id: Enable Hyper-V
+    #  directives:
+    #    securityContext: elevated
+    #  settings:
+    #    Name: Microsoft-Hyper-V-All
+    #    Ensure: Present

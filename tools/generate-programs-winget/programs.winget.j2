@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  resources:
+{% for pkg in packages %}
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: {{ pkg.name }}
+      directives:
+        securityContext: elevated
+      settings:
+        id: {{ pkg.packageid }}{% if pkg.store %}
+        source: {{ pkg.store }}{% endif %}
+{% endfor %}
+
+    - resource: PSDscResources/Script
+      id: Refresh Path
+      dependsOn:
+        - NVM
+      directives:
+        description: Refresh PATH environment variable
+        securityContext: elevated
+      settings:
+        GetScript: |
+          @{ Result = $env:PATH }
+        SetScript: |
+          $env:NVM_HOME = [System.Environment]::GetEnvironmentVariable('NVM_HOME', 'Machine')
+          $env:NVM_SYMLINK = [System.Environment]::GetEnvironmentVariable('NVM_SYMLINK', 'Machine')
+          $systemPath = [System.Environment]::GetEnvironmentVariable('Path', 'Machine')
+          $userPath = [System.Environment]::GetEnvironmentVariable('Path', 'User')
+
+          $env:Path = $systemPath + ';' + $userPath
+        TestScript: |
+          [bool](Get-Command nvm -ErrorAction SilentlyContinue)
+
+    - resource: PSDscResources/Script
+      id: Install NVM LTS
+      dependsOn:
+        - Refresh Path
+      directives:
+        description: Enable NVM LTS
+        securityContext: elevated
+      settings:
+        GetScript: |
+          @{ Result = nvm current }
+        SetScript: |
+          nvm install lts
+          nvm use lts
+        TestScript: |
+          -not ($(nvm current) -match "^No current version")
+
+{% for npm in npm_packages %}
+    - resource: NpmDsc/NpmPackage
+      id: {{ npm.name }}
+      dependsOn:
+        - Install NVM LTS
+      directives:
+        allowPrerelease: true
+      settings:
+        Name: "{{ npm.packageid }}"
+        Global: true
+{% endfor %}
+    - resource: Microsoft.VisualStudio.DSC/VSComponents
+      dependsOn:
+        - Visual Studio
+      directives:
+        description: Install VS Components
+        allowPrerelease: true
+        securityContext: elevated
+      settings:
+        productId: Microsoft.VisualStudio.Product.Professional
+        channelId: VisualStudio.17.Release
+        vsConfigFile: '${WinGetConfigRoot}\.vsconfig'

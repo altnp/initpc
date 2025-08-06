@@ -1,0 +1,656 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Chrome
+      directives:
+        securityContext: elevated
+      settings:
+        id: Google.Chrome
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Brave
+      directives:
+        securityContext: elevated
+      settings:
+        id: Brave.Brave
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Firefox
+      directives:
+        securityContext: elevated
+      settings:
+        id: Mozilla.Firefox
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: PowerShell Core
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.PowerShell
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Nuget CLI
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.NuGet
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: AWS CLI
+      directives:
+        securityContext: elevated
+      settings:
+        id: Amazon.AWSCLI
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: AWS CLI Session Manager Plugin
+      directives:
+        securityContext: elevated
+      settings:
+        id: Amazon.AWSCLI.SessionManagerPlugin
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Azure CLI
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.AzureCLI
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Github CLI
+      directives:
+        securityContext: elevated
+      settings:
+        id: GitHub.cli
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: NVM
+      directives:
+        securityContext: elevated
+      settings:
+        id: CoreyButler.NVMforWindows
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: pnpm
+      directives:
+        securityContext: elevated
+      settings:
+        id: PNPM.PNPM
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: yarn
+      directives:
+        securityContext: elevated
+      settings:
+        id: Yarn.Yarn
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Terraform
+      directives:
+        securityContext: elevated
+      settings:
+        id: HashiCorp.Terraform
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Kind
+      directives:
+        securityContext: elevated
+      settings:
+        id: Kubernetes.Kind
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: VSCode
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.VisualStudioCode
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Cursor
+      directives:
+        securityContext: elevated
+      settings:
+        id: Anyshpere.Cursor
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Visual Studio
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.VisualStudio.2022.Professional
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Android Studio
+      directives:
+        securityContext: elevated
+      settings:
+        id: Google.AndroidStudio
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: NeoVim
+      directives:
+        securityContext: elevated
+      settings:
+        id: Neovim.Neovim
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: DotUltimate
+      directives:
+        securityContext: elevated
+      settings:
+        id: JetBrains.DotUltimate
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: DataGrip
+      directives:
+        securityContext: elevated
+      settings:
+        id: JetBrains.DataGrip
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: IDEA
+      directives:
+        securityContext: elevated
+      settings:
+        id: JetBrains.IntelliJIdea.Ultimate
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: BeekeeperStudio
+      directives:
+        securityContext: elevated
+      settings:
+        id: beekeeper-studio.beekeeper-studio
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: JDK 17
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.OpenJDK.17
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: .NET3.1
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.DotNet.SDK.3_1
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: .NET5
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.DotNet.SDK.5
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: .NET6
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.DotNet.SDK.6
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: .NET7
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.DotNet.SDK.7
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: .NET8
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.DotNet.SDK.8
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: .NET9
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.DotNet.SDK.9
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Python 3.12
+      directives:
+        securityContext: elevated
+      settings:
+        id: Python.Python.3.12
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Rust
+      directives:
+        securityContext: elevated
+      settings:
+        id: Rustlang.Rustup
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Go
+      directives:
+        securityContext: elevated
+      settings:
+        id: GoLang.Go
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: .NET 4.8 Dev Kit
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.DotNet.Framework.DeveloperPack_4
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Make
+      directives:
+        securityContext: elevated
+      settings:
+        id: ezwinports.make
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Android Sdk
+      directives:
+        securityContext: elevated
+      settings:
+        id: Google.PlatformTools
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Docker Desktop
+      directives:
+        securityContext: elevated
+      settings:
+        id: Docker.DockerDesktop
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: SSMS
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.SQLServerManagementStudio
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Redis Insights
+      directives:
+        securityContext: elevated
+      settings:
+        id: xp8k1ghcb0f1r2
+        source: msstore
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: ShellCheck
+      directives:
+        securityContext: elevated
+      settings:
+        id: koalaman.shelldcheck
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: shfmt
+      directives:
+        securityContext: elevated
+      settings:
+        id: mvdan.shfmt
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Postman
+      directives:
+        securityContext: elevated
+      settings:
+        id: Postman.Postman
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: SoapUI
+      directives:
+        securityContext: elevated
+      settings:
+        id: SmartBear.SoapUI
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: PerfView
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.PerfView
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: WinSCP
+      directives:
+        securityContext: elevated
+      settings:
+        id: WinSCP.WinSCP
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Helm
+      directives:
+        securityContext: elevated
+      settings:
+        id: Helm.Helm
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: ProcMon
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.Sysinternals.ProcessMonitor
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: RDM
+      directives:
+        securityContext: elevated
+      settings:
+        id: Devolutions.RemoteDesktopManager
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: JetBrains Toolbox
+      directives:
+        securityContext: elevated
+      settings:
+        id: JetBrains.Toolbox
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Curl
+      directives:
+        securityContext: elevated
+      settings:
+        id: cURL.cURL
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: UV
+      directives:
+        securityContext: elevated
+      settings:
+        id: astral-sh.uv
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Conda
+      directives:
+        securityContext: elevated
+      settings:
+        id: Anaconda.Anaconda3
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: 7Zip
+      directives:
+        securityContext: elevated
+      settings:
+        id: 7zip.7zip
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: PowerToys
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.PowerToys
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: AHK
+      directives:
+        securityContext: elevated
+      settings:
+        id: AutoHotkey.AutoHotkey
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Fzf
+      directives:
+        securityContext: elevated
+      settings:
+        id: junegunn.fzf
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Ripgrp
+      directives:
+        securityContext: elevated
+      settings:
+        id: BurntSushi.ripgrep.GNU
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Wget
+      directives:
+        securityContext: elevated
+      settings:
+        id: GNU.Wget2
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Fd
+      directives:
+        securityContext: elevated
+      settings:
+        id: sharkdp.fd
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Eza
+      directives:
+        securityContext: elevated
+      settings:
+        id: eza-community.eza
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Unzip
+      directives:
+        securityContext: elevated
+      settings:
+        id: GnuWin32.UnZip
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Gzip
+      directives:
+        securityContext: elevated
+      settings:
+        id: GnuWin32.GZip
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Bottom
+      directives:
+        securityContext: elevated
+      settings:
+        id: Clement.bottom
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Jq
+      directives:
+        securityContext: elevated
+      settings:
+        id: jqlang.jq
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Chezmoi
+      directives:
+        securityContext: elevated
+      settings:
+        id: twpayne.chezmoi
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Oh My Posh
+      directives:
+        securityContext: elevated
+      settings:
+        id: JanDeDobbeleer.OhMyPosh
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Windhawk
+      directives:
+        securityContext: elevated
+      settings:
+        id: RamenSoftware.Windhawk 1.6.1
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Bitwarden
+      directives:
+        securityContext: elevated
+      settings:
+        id: Bitwarden.Bitwarden
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Bitwarden CLI
+      directives:
+        securityContext: elevated
+      settings:
+        id: Bitwarden.CLI
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: ChatGPT
+      directives:
+        securityContext: elevated
+      settings:
+        id: 9nt1r1c2hh7j
+        source: msstore
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Custom Context Menus
+      directives:
+        securityContext: elevated
+      settings:
+        id: 9PC7BZZ28G0X
+        source: msstore
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Obsidian
+      directives:
+        securityContext: elevated
+      settings:
+        id: Obsidian.Obsidian
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Steam
+      directives:
+        securityContext: elevated
+      settings:
+        id: Valve.Steam
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Discord
+      directives:
+        securityContext: elevated
+      settings:
+        id: Discord.Discord
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Slack
+      directives:
+        securityContext: elevated
+      settings:
+        id: SlackTechnologies.Slack
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Zoom
+      directives:
+        securityContext: elevated
+      settings:
+        id: Zoom.Zoom
+
+    - resource: PSDscResources/Script
+      id: Refresh Path
+      dependsOn:
+        - NVM
+      directives:
+        description: Refresh PATH environment variable
+        securityContext: elevated
+      settings:
+        GetScript: |
+          @{ Result = $env:PATH }
+        SetScript: |
+          $env:NVM_HOME = [System.Environment]::GetEnvironmentVariable('NVM_HOME', 'Machine')
+          $env:NVM_SYMLINK = [System.Environment]::GetEnvironmentVariable('NVM_SYMLINK', 'Machine')
+          $systemPath = [System.Environment]::GetEnvironmentVariable('Path', 'Machine')
+          $userPath = [System.Environment]::GetEnvironmentVariable('Path', 'User')
+
+          $env:Path = $systemPath + ';' + $userPath
+        TestScript: |
+          [bool](Get-Command nvm -ErrorAction SilentlyContinue)
+
+    - resource: PSDscResources/Script
+      id: Install NVM LTS
+      dependsOn:
+        - Refresh Path
+      directives:
+        description: Enable NVM LTS
+        securityContext: elevated
+      settings:
+        GetScript: |
+          @{ Result = nvm current }
+        SetScript: |
+          nvm install lts
+          nvm use lts
+        TestScript: |
+          -not ($(nvm current) -match "^No current version")
+
+    - resource: NpmDsc/NpmPackage
+      id: CorePack
+      dependsOn:
+        - Install NVM LTS
+      directives:
+        allowPrerelease: true
+      settings:
+        Name: "corepack"
+        Global: true
+
+    - resource: NpmDsc/NpmPackage
+      id: Angular CLI
+      dependsOn:
+        - Install NVM LTS
+      directives:
+        allowPrerelease: true
+      settings:
+        Name: "@angular/cli"
+        Global: true
+
+    - resource: NpmDsc/NpmPackage
+      id: Tsx
+      dependsOn:
+        - Install NVM LTS
+      directives:
+        allowPrerelease: true
+      settings:
+        Name: "tsx"
+        Global: true
+
+    - resource: NpmDsc/NpmPackage
+      id: Yo
+      dependsOn:
+        - Install NVM LTS
+      directives:
+        allowPrerelease: true
+      settings:
+        Name: "yo"
+        Global: true
+
+    - resource: NpmDsc/NpmPackage
+      id: Vsce
+      dependsOn:
+        - Install NVM LTS
+      directives:
+        allowPrerelease: true
+      settings:
+        Name: "vsce"
+        Global: true
+
+    - resource: NpmDsc/NpmPackage
+      id: Nx
+      dependsOn:
+        - Install NVM LTS
+      directives:
+        allowPrerelease: true
+      settings:
+        Name: "nx"
+        Global: true
+
+    - resource: NpmDsc/NpmPackage
+      id: Turbo
+      dependsOn:
+        - Install NVM LTS
+      directives:
+        allowPrerelease: true
+      settings:
+        Name: "turbo"
+        Global: true
+
+    - resource: Microsoft.VisualStudio.DSC/VSComponents
+      dependsOn:
+        - Visual Studio
+      directives:
+        description: Install VS Components
+        allowPrerelease: true
+        securityContext: elevated
+      settings:
+        productId: Microsoft.VisualStudio.Product.Professional
+        channelId: VisualStudio.17.Release
+        vsConfigFile: '${WinGetConfigRoot}\.vsconfig'

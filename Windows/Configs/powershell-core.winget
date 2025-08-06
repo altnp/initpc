@@ -1,0 +1,293 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  resources:
+    - resource: PSDscResources/Environment
+      id: POWERSHELL_CLI_TELEMETRY_OPTOUT
+      directives:
+        securityContext: elevated
+      settings:
+        Name: POWERSHELL_CLI_TELEMETRY_OPTOUT
+        Value: "1"
+        Target:
+          - Machine
+
+    - resource: PSDscResources/Environment
+      id: POWERSHELL_TELEMETRY_OPTOUT
+      directives:
+        securityContext: elevated
+      settings:
+        Name: POWERSHELL_TELEMETRY_OPTOUT
+        Value: "1"
+        Target:
+          - Machine
+
+    - resource: PSDscResources/Environment
+      id: POWERSHELL_UPDATECHECK
+      directives:
+        securityContext: elevated
+      settings:
+        Name: POWERSHELL_UPDATECHECK
+        Value: "Off"
+        Target:
+          - Machine
+
+    - resource: PSDscResources/Environment
+      id: POWERSHELL_UPDATECHECK_OPTOUT
+      directives:
+        securityContext: elevated
+      settings:
+        Name: POWERSHELL_UPDATECHECK_OPTOUT
+        Value: "1"
+        Target:
+          - Machine
+
+    - resource: PSDscResources/Environment
+      id: DOTNET_CLI_TELEMETRY_OPTOUT
+      directives:
+        securityContext: elevated
+      settings:
+        Name: DOTNET_CLI_TELEMETRY_OPTOUT
+        Value: "1"
+        Target:
+          - Machine
+
+    - resource: PSDscResources/Environment
+      id: DOTNET_TELEMETRY_OPTOUT
+      directives:
+        securityContext: elevated
+      settings:
+        Name: DOTNET_TELEMETRY_OPTOUT
+        Value: "1"
+        Target:
+          - Machine
+
+    - resource: PSDscResources/Environment
+      id: OMP_DISABLE_TELEMETRY
+      directives:
+        securityContext: elevated
+      settings:
+        Name: OMP_DISABLE_TELEMETRY
+        Value: "1"
+        Target:
+          - Machine
+
+    - resource: PSDscResources/Environment
+      id: OMP_SKIP_UPDATE
+      directives:
+        securityContext: elevated
+      settings:
+        Name: OMP_SKIP_UPDATE
+        Value: "true"
+        Target:
+          - Machine
+
+    - resource: PSDscResources/Script
+      id: AWS.Tools.Installer Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name AWS.Tools.Installer }
+        SetScript: |
+          Install-Module -Name AWS.Tools.Installer -Force -Scope CurrentUser
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name AWS.Tools.Installer)
+
+    - resource: PSDscResources/Script
+      id: AWS.Tools.Common Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name AWS.Tools.Common }
+        SetScript: |
+          Install-AWSToolsModule AWS.Tools.Common -Scope CurrentUser -Force
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name AWS.Tools.Common)
+
+    - resource: PSDscResources/Script
+      id: AWS.Tools.CloudWatch Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name AWS.Tools.CloudWatch }
+        SetScript: |
+          Install-AWSToolsModule AWS.Tools.CloudWatch -Scope CurrentUser -Force
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name AWS.Tools.CloudWatch)
+
+    - resource: PSDscResources/Script
+      id: AWS.Tools.S3 Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name AWS.Tools.S3 }
+        SetScript: |
+          Install-AWSToolsModule AWS.Tools.S3 -Scope CurrentUser -Force
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name AWS.Tools.S3)
+
+    - resource: PSDscResources/Script
+      id: AWS.Tools.EC2 Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name AWS.Tools.EC2 }
+        SetScript: |
+          Install-AWSToolsModule AWS.Tools.EC2 -Scope CurrentUser -Force
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name AWS.Tools.EC2)
+
+    - resource: PSDscResources/Script
+      id: AWS.Tools.RDS Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name AWS.Tools.RDS }
+        SetScript: |
+          Install-AWSToolsModule AWS.Tools.RDS -Scope CurrentUser -Force
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name AWS.Tools.RDS)
+
+    - resource: PSDscResources/Script
+      id: AWS.Tools.Lambda Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name AWS.Tools.Lambda }
+        SetScript: |
+          Install-AWSToolsModule AWS.Tools.Lambda -Scope CurrentUser -Force
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name AWS.Tools.Lambda)
+
+    - resource: PSDscResources/Script
+      id: AWS.Tools.IdentityManagement Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name AWS.Tools.IdentityManagement }
+        SetScript: |
+          Install-AWSToolsModule AWS.Tools.IdentityManagement -Scope CurrentUser -Force
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name AWS.Tools.IdentityManagement)
+
+    - resource: PSDscResources/Script
+      id: AWS.Tools.DynamoDBv2 Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name AWS.Tools.DynamoDBv2 }
+        SetScript: |
+          Install-AWSToolsModule AWS.Tools.DynamoDBv2 -Scope CurrentUser -Force
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name AWS.Tools.DynamoDBv2)
+
+    - resource: PSDscResources/Script
+      id: AWS.Tools.SQS Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name AWS.Tools.SQS }
+        SetScript: |
+          Install-AWSToolsModule AWS.Tools.SQS -Scope CurrentUser -Force
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name AWS.Tools.SQS)
+
+    - resource: PSDscResources/Script
+      id: AWS.Tools.SimpleNotificationService Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name AWS.Tools.SimpleNotificationService }
+        SetScript: |
+          Install-AWSToolsModule AWS.Tools.SimpleNotificationService -Scope CurrentUser -Force
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name AWS.Tools.SimpleNotificationService)
+
+    - resource: PSDscResources/Script
+      id: AWS.Tools.SecretsManager Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name AWS.Tools.SecretsManager }
+        SetScript: |
+          Install-AWSToolsModule AWS.Tools.SecretsManager -Scope CurrentUser -Force
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name AWS.Tools.SecretsManager)
+
+    - resource: PSDscResources/Script
+      id: AWS.Tools.SimpleSystemsManagement Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name AWS.Tools.SimpleSystemsManagement }
+        SetScript: |
+          Install-AWSToolsModule AWS.Tools.SimpleSystemsManagement -Scope CurrentUser -Force
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name AWS.Tools.SimpleSystemsManagement)
+
+    - resource: PSDscResources/Script
+      id: NPM Completion Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name npm-completion }
+        SetScript: |
+          Install-Module -Name npm-completion -Force -Scope CurrentUser
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name npm-completion)
+
+    - resource: PSDscResources/Script
+      id: Posh Docker Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name posh-docker }
+        SetScript: |
+          Install-Module -Name posh-docker -Force -Scope CurrentUser
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name posh-docker)
+
+    - resource: PSDscResources/Script
+      id: Posh Git Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name Posh-Git }
+        SetScript: |
+          Install-Module -Name Posh-Git -Force -Scope CurrentUser
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name Posh-Git)
+
+    - resource: PSDscResources/Script
+      id: Lazy Posh Git Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name lazy-posh-git }
+        SetScript: |
+          Install-Module -Name lazy-posh-git -AllowClobber -Force -Scope CurrentUser
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name lazy-posh-git)
+
+    - resource: PSDscResources/Script
+      id: AWSCompleter Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name AWSCompleter }
+        SetScript: |
+          Install-Module -Name AWSCompleter -Force -Scope CurrentUser
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name AWSCompleter)
+
+    - resource: PSDscResources/Script
+      id: Get-ChildItemColor Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name Get-ChildItemColor }
+        SetScript: |
+          Install-Module -Name Get-ChildItemColor -Force -Scope CurrentUser
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name Get-ChildItemColor)
+
+    - resource: PSDscResources/Script
+      id: WSLTabCompletion Module
+      settings:
+        GetScript: |
+          @{ Result = Get-Module -ListAvailable -Name WSLTabCompletion }
+        SetScript: |
+          Install-Module -Name WSLTabCompletion -Force
+        TestScript: |
+          [bool](Get-Module -ListAvailable -Name WSLTabCompletion)
+
+    - resource: PSDscResources/Script
+      id: Octopus.Client Package
+      settings:
+        GetScript: |
+          @{ Result = Get-Package -Name Octopus.Client -ErrorAction SilentlyContinue }
+        SetScript: |
+          Install-Package Octopus.Client -Source https://www.nuget.org/api/v2 -SkipDependencies
+        TestScript: |
+          [bool](Get-Package -Name Octopus.Client -ErrorAction SilentlyContinue)

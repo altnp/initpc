@@ -1,0 +1,194 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  resources:
+    - resource: Microsoft.Windows.Settings/WindowsSettings
+      id: Dark Mode
+      directives:
+        allowPrerelease: true
+        securityContext: elevated
+      settings:
+        AppColorMode: Dark
+        SystemColorMode: Dark
+        TaskbarAlignment: Left
+
+    - resource: PSDscResources/Registry
+      id: Disable Transparency
+      directives:
+        securityContext: elevated
+      settings:
+        Key: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize'
+        ValueName: "EnableTransparency"
+        ValueType: DWORD
+        ValueData: 0
+        Force: true
+        Ensure: "Present"
+
+    - resource: PSDscResources/Registry
+      id: Remove Recycling Bin from Desktop
+      directives:
+        securityContext: elevated
+      settings:
+        Key: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel'
+        ValueName: "{645FF040-5081-101B-9F08-00AA002F954E}"
+        ValueType: DWORD
+        ValueData: 1
+        Force: true
+        Ensure: "Present"
+
+    - resource: PSDscResources/Registry
+      id: Disable Mouse Acceleration - MouseSpeed
+      directives:
+        securityContext: elevated
+      settings:
+        Key: 'HKCU:\Control Panel\Mouse'
+        ValueName: "MouseSpeed"
+        ValueType: String
+        ValueData: "0"
+        Force: true
+        Ensure: "Present"
+
+    - resource: PSDscResources/Registry
+      id: Disable Mouse Acceleration - MouseThreshold1
+      directives:
+        securityContext: elevated
+      settings:
+        Key: 'HKCU:\Control Panel\Mouse'
+        ValueName: "MouseThreshold1"
+        ValueType: String
+        ValueData: "0"
+        Force: true
+        Ensure: "Present"
+
+    - resource: PSDscResources/Registry
+      id: Disable Mouse Acceleration - MouseThreshold2
+      directives:
+        securityContext: elevated
+      settings:
+        Key: 'HKCU:\Control Panel\Mouse'
+        ValueName: "MouseThreshold2"
+        ValueType: String
+        ValueData: "0"
+        Force: true
+        Ensure: "Present"
+
+    - resource: PSDscResources/Registry
+      id: Disable Snap Assist
+      directives:
+        securityContext: elevated
+      settings:
+        Key: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
+        ValueName: "SnapAssist"
+        ValueType: DWORD
+        ValueData: 0
+        Force: true
+        Ensure: "Present"
+
+    - resource: PSDscResources/Registry
+      id: Disable Lock Screen Tips
+      directives:
+        securityContext: elevated
+      settings:
+        Key: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        ValueName: "SubscribedContent-310093Enabled"
+        ValueType: DWORD
+        ValueData: 0
+        Force: true
+        Ensure: "Present"
+
+    - resource: PSDscResources/Registry
+      id: Disable Rotating Lock Screen Overlay
+      directives:
+        securityContext: elevated
+      settings:
+        Key: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        ValueName: "RotatingLockScreenOverlayEnabled"
+        ValueType: DWORD
+        ValueData: 0
+        Force: true
+        Ensure: "Present"
+
+    - resource: PSDscResources/Registry
+      id: Disable SubscribedContent-338387Enabled
+      directives:
+        securityContext: elevated
+      settings:
+        Key: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager'
+        ValueName: "SubscribedContent-338387Enabled"
+        ValueType: DWORD
+        ValueData: 0
+        Force: true
+        Ensure: "Present"
+
+    - resource: PSDscResources/Registry
+      id: Set ConsentPromptBehaviorAdmin
+      directives:
+        securityContext: elevated
+      settings:
+        Key: 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System'
+        ValueName: "ConsentPromptBehaviorAdmin"
+        ValueType: DWORD
+        ValueData: 5
+        Force: true
+        Ensure: "Present"
+
+    - resource: PSDscResources/Registry
+      id: Set PromptOnSecureDesktop
+      directives:
+        securityContext: elevated
+      settings:
+        Key: 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System'
+        ValueName: "PromptOnSecureDesktop"
+        ValueType: DWORD
+        ValueData: 0
+        Force: true
+        Ensure: "Present"
+
+    - resource: PSDscResources/Registry
+      id: Show Hidden Files in Explorer
+      directives:
+        securityContext: elevated
+      settings:
+        Key: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
+        ValueName: "Hidden"
+        ValueType: DWORD
+        ValueData: 1
+        Force: true
+        Ensure: "Present"
+
+    - resource: PSDscResources/Registry
+      id: Disable Windows Copilot
+      directives:
+        securityContext: elevated
+      settings:
+        Key: 'HKCU:\Software\Policies\Microsoft\Windows\WindowsCopilot'
+        ValueName: "TurnOffWindowsCopilot"
+        ValueType: DWORD
+        ValueData: 1
+        Force: true
+        Ensure: "Present"
+
+    - resource: PSDscResources/Registry
+      id: Enable Sudo for Windows
+      directives:
+        securityContext: elevated
+      settings:
+        Key: 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Sudo'
+        ValueName: "Enabled"
+        ValueType: DWORD
+        ValueData: 3
+        Force: true
+        Ensure: "Present"
+
+    - resource: Microsoft.Windows.Developer/Taskbar
+      id: Modify Taskbar Settings
+      directives:
+        allowPrerelease: true
+      settings:
+        Alignment: Left
+        HideLabelsMode: Always
+        SearchBoxMode: Hide
+        TaskViewButton: Hide
+        WidgetsButton: Hide
+        RestartExplorer: True
+
+  configurationVersion: 0.2.0
