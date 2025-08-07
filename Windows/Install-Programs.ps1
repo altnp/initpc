@@ -1,7 +1,7 @@
 Write-Header "Installing Programs"
 
 try {
-    winget configure -f .\Scripts\Windows\Configs\programs.winget --accept-configuration-agreements --nowarn
+    winget configure -f .\Windows\Configs\programs.winget --accept-configuration-agreements --nowarn
 
     # Missing from WinGet
     choco install sqltoolbelt -y

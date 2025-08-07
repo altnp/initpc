@@ -10,6 +10,8 @@ try {
 
     pnpm setup;
     $env:PNPM_HOME = [System.Environment]::GetEnvironmentVariable('PNPM_HOME', 'User')
+    Refresh-Path
+
 
     if (-not (pnpm list -g vsts-npm-auth | Select-String 'vsts-npm-auth')) {
         pnpm install -g vsts-npm-auth

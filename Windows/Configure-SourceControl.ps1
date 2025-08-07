@@ -16,8 +16,8 @@ try {
         try {
             $path = "$env:USERPROFILE\.azure\cliextensions\azure-devops"
             $me = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
-            icacls $path /setowner $me /T /C
-            icacls $path /grant ($me + ":(OI)(CI)F") /T /C
+            icacls $path /setowner $me /T /C *> $null
+            icacls $path /grant ($me + ":(OI)(CI)F") /T /C *> $null
         }
         catch {
             Write-Host "Failed to update permissions for Azure DevOps CLI extension. Please uninstall and reinstall as non-Administrator."

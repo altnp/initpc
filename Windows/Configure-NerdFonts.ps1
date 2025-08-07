@@ -4,8 +4,28 @@ function Test-FontInstalled {
     param([string]$FontName)
     $fontsPath = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts"
     $userFontsPath = "HKCU:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts"
-    $fonts = @(Get-ItemProperty -Path $fontsPath | Get-Member -MemberType NoteProperty | Select-Object -ExpandProperty Name)
-    $userFonts = @(Get-ItemProperty -Path $userFontsPath | Get-Member -MemberType NoteProperty | Select-Object -ExpandProperty Name)
+
+    $fonts = @()
+    $userFonts = @()
+
+    try {
+        $systemFontProps = Get-ItemProperty -Path $fontsPath -ErrorAction SilentlyContinue
+        if ($systemFontProps) {
+            $fonts = @($systemFontProps | Get-Member -MemberType NoteProperty | Select-Object -ExpandProperty Name)
+        }
+    }
+    catch {
+    }
+
+    try {
+        $userFontProps = Get-ItemProperty -Path $userFontsPath -ErrorAction SilentlyContinue
+        if ($userFontProps) {
+            $userFonts = @($userFontProps | Get-Member -MemberType NoteProperty | Select-Object -ExpandProperty Name)
+        }
+    }
+    catch {
+    }
+
     return ($fonts + $userFonts) -match $FontName
 }
 

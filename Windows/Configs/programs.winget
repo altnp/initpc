@@ -49,7 +49,7 @@ properties:
       directives:
         securityContext: elevated
       settings:
-        id: Amazon.AWSCLI.SessionManagerPlugin
+        id: Amazon.SessionManagerPlugin
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Azure CLI
@@ -112,7 +112,7 @@ properties:
       directives:
         securityContext: elevated
       settings:
-        id: Anyshpere.Cursor
+        id: Anysphere.Cursor
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Visual Studio
@@ -266,22 +266,21 @@ properties:
       directives:
         securityContext: elevated
       settings:
-        id: Microsoft.SQLServerManagementStudio
+        id: Microsoft.SQLServerManagementStudio.21
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Redis Insights
       directives:
         securityContext: elevated
       settings:
-        id: xp8k1ghcb0f1r2
-        source: msstore
+        id: RedisInsight.RedisInsight
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: ShellCheck
       directives:
         securityContext: elevated
       settings:
-        id: koalaman.shelldcheck
+        id: koalaman.shellcheck
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: shfmt
@@ -365,7 +364,7 @@ properties:
       directives:
         securityContext: elevated
       settings:
-        id: Anaconda.Anaconda3
+        id: Anaconda.Miniconda3
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: 7Zip
@@ -470,7 +469,7 @@ properties:
       directives:
         securityContext: elevated
       settings:
-        id: RamenSoftware.Windhawk 1.6.1
+        id: RamenSoftware.Windhawk
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Bitwarden
@@ -493,35 +492,6 @@ properties:
       settings:
         id: 9nt1r1c2hh7j
         source: msstore
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Custom Context Menus
-      directives:
-        securityContext: elevated
-      settings:
-        id: 9PC7BZZ28G0X
-        source: msstore
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Obsidian
-      directives:
-        securityContext: elevated
-      settings:
-        id: Obsidian.Obsidian
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Steam
-      directives:
-        securityContext: elevated
-      settings:
-        id: Valve.Steam
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Discord
-      directives:
-        securityContext: elevated
-      settings:
-        id: Discord.Discord
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Slack
