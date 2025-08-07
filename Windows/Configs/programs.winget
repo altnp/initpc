@@ -254,12 +254,12 @@ properties:
       settings:
         id: Docker.DockerDesktop
 
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: SSMS
-      directives:
-        securityContext: elevated
-      settings:
-        id: Microsoft.SQLServerManagementStudio.21
+    # - resource: Microsoft.WinGet.DSC/WinGetPackage
+    #   id: SSMS
+    #   directives:
+    #     securityContext: elevated
+    #   settings:
+    #     id: Microsoft.SQLServerManagementStudio.21
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Redis Insights
