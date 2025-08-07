@@ -26,8 +26,3 @@ mkdir -p ~/.cache
 if [ -f ~/.wget-hsts ]; then
     mv ~/.wget-hsts ~/.cache/wget-hsts
 fi
-
-rm ~/.bash_profile >/dev/null 2>&1
-rm ~/.bashrc >/dev/null 2>&1
-rm ~/.bash_history >/dev/null 2>&1
-rm ~/.bash_logout >/dev/null 2>&1

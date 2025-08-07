@@ -6,6 +6,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 ' | sudo tee -a /etc/profile >/dev/null
 
+sudo mkdir -p /etc/zsh
 sudo touch /etc/zsh/zshenv
 echo '
 export XDG_CONFIG_HOME="$HOME/.config"

@@ -8,8 +8,8 @@ if [ -d "$WIN_ANDROID_SDK" ]; then
         if [ -f "$LINUX_ANDROID_SDK/platform-tools/adb" ] && [ ! -L "$LINUX_ANDROID_SDK/platform-tools/adb" ]; then
             mv "$LINUX_ANDROID_SDK/platform-tools/adb" "$LINUX_ANDROID_SDK/platform-tools/adb.wsl.bak" || true
         fi
-        ln -sf "$WIN_ANDROID_SDK/platform-tools/adb.exe" "$LINUX_ANDROID_SDK/platform-tools/adb"
-        info "Symlinked adb to Windows SDK"
+        sudo ln -sf "$WIN_ANDROID_SDK/platform-tools/adb.exe" "$LINUX_ANDROID_SDK/platform-tools/adb"
+        echo "Symlinked adb to Windows SDK"
     fi
 
     if [ -f "$WIN_ANDROID_SDK/emulator/emulator.exe" ]; then
@@ -17,7 +17,7 @@ if [ -d "$WIN_ANDROID_SDK" ]; then
         if [ -f "$LINUX_ANDROID_SDK/emulator/emulator" ] && [ ! -L "$LINUX_ANDROID_SDK/emulator/emulator" ]; then
             mv "$LINUX_ANDROID_SDK/emulator/emulator" "$LINUX_ANDROID_SDK/emulator/emulator.wsl.bak" || true
         fi
-        ln -sf "$WIN_ANDROID_SDK/emulator/emulator.exe" "$LINUX_ANDROID_SDK/emulator/emulator"
-        info "Symlinked emulator to Windows SDK"
+        sudo ln -sf "$WIN_ANDROID_SDK/emulator/emulator.exe" "$LINUX_ANDROID_SDK/emulator/emulator"
+        echo "Symlinked emulator to Windows SDK"
     fi
 fi

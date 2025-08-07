@@ -6,6 +6,7 @@ try {
     # Missing from WinGet
     choco install sqltoolbelt -y
     choco install mingw -y
+    choco install android-sdk -y
 
     nuget sources Add -Name "nuget.org" -Source "https://api.nuget.org/v3/index.json";
     nuget sources Enable -Name "nuget.org"

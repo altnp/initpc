@@ -248,13 +248,6 @@ properties:
         id: ezwinports.make
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Android Sdk
-      directives:
-        securityContext: elevated
-      settings:
-        id: Google.PlatformTools
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Docker Desktop
       directives:
         securityContext: elevated

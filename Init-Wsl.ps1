@@ -2,13 +2,13 @@ $ErrorActionPreference = "Stop"
 $ProgressPreference = 'SilentlyContinue'
 
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    $arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$($myInvocation.MyCommand.Definition)`""
-    Start-Process PowerShell -Verb RunAs -ArgumentList $arguments
-    exit
+  $arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$($myInvocation.MyCommand.Definition)`""
+  Start-Process PowerShell -Verb RunAs -ArgumentList $arguments
+  exit
 }
 
 Get-ChildItem -Path ".\Scripts\utils\" -Filter *.ps1 | ForEach-Object {
-    . $_.FullName
+  . $_.FullName
 }
 
 Write-Header "Installing WSL - Arch..."
