@@ -101,6 +101,13 @@ properties:
         id: Kubernetes.Kind
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: VSCode
+      directives:
+        securityContext: elevated
+      settings:
+        id: Microsoft.VisualStudioCode
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Cursor
       directives:
         securityContext: elevated

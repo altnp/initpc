@@ -4,7 +4,6 @@ try {
     winget configure -f .\Windows\Configs\programs.winget --accept-configuration-agreements --nowarn
 
     # Missing from WinGet
-    choco install vscode -y # WinGet doese a "user" install, which breaks some other scripts
     choco install sqltoolbelt -y
     choco install mingw -y
     choco install android-sdk -y
