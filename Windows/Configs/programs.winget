@@ -114,6 +114,13 @@ properties:
       settings:
         id: Microsoft.VisualStudio.2022.Professional
 
+    #- resource: Microsoft.WinGet.DSC/WinGetPackage
+    #  id: Visual Studio
+    #  directives:
+    #    securityContext: elevated
+    #  settings:
+    #    id: Microsoft.VisualStudio.2022.Community
+
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Android Studio
       directives:
@@ -148,13 +155,6 @@ properties:
         securityContext: elevated
       settings:
         id: JetBrains.IntelliJIdea.Ultimate
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: BeekeeperStudio
-      directives:
-        securityContext: elevated
-      settings:
-        id: beekeeper-studio.beekeeper-studio
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: JDK 17
@@ -371,6 +371,7 @@ properties:
       directives:
         securityContext: elevated
       settings:
+        version: 1.1.37.02
         id: AutoHotkey.AutoHotkey
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
@@ -478,6 +479,35 @@ properties:
       settings:
         id: 9nt1r1c2hh7j
         source: msstore
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Custom Context Menus
+      directives:
+        securityContext: elevated
+      settings:
+        id: 9PC7BZZ28G0X
+        source: msstore
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Obsidian
+      directives:
+        securityContext: elevated
+      settings:
+        id: Obsidian.Obsidian
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Steam
+      directives:
+        securityContext: elevated
+      settings:
+        id: Valve.Steam
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Discord
+      directives:
+        securityContext: elevated
+      settings:
+        id: Discord.Discord
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Slack
@@ -610,3 +640,15 @@ properties:
         productId: Microsoft.VisualStudio.Product.Professional
         channelId: VisualStudio.17.Release
         vsConfigFile: '${WinGetConfigRoot}\.vsconfig'
+
+    #- resource: Microsoft.VisualStudio.DSC/VSComponents
+    #  dependsOn:
+    #    - Visual Studio
+    #  directives:
+    #    description: Install VS Components
+    #    allowPrerelease: true
+    #    securityContext: elevated
+    #  settings:
+    #    productId: Microsoft.VisualStudio.Product.Professional
+    #    channelId: VisualStudio.17.Release
+    #    vsConfigFile: '${WinGetConfigRoot}\.vsconfig'
