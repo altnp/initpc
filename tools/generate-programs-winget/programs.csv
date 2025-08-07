@@ -13,7 +13,6 @@ pnpm,PNPM.PNPM,cli,
 yarn,Yarn.Yarn,cli
 Terraform,HashiCorp.Terraform,cli,
 Kind,Kubernetes.Kind,cli,
-VSCode,Microsoft.VisualStudioCode,editor,
 Cursor,Anysphere.Cursor,editor,
 Visual Studio,Microsoft.VisualStudio.2022.Professional,editor,
 Android Studio,Google.AndroidStudio,editor,
