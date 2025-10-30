@@ -87,6 +87,8 @@ echo 'export DOTNET_ROOT="/lib/dotnet"' >>~/.bashrc
 
 dotnet tool install Octopus.DotNet.Cli -g
 
+sudo pacman -S --noconfirm rust
+
 sudo pacman -S --noconfirm jdk21-openjdk
 sudo pacman -S --noconfirm jdk17-openjdk
 sudo pacman -S --noconfirm jdk11-openjdk
@@ -115,9 +117,10 @@ sudo groupadd android-sdk
 sudo chgrp -R android-sdk /opt/android-sdk
 sudo chmod -R g+w /opt/android-sdk
 sudo usermod -aG android-sdk "$(whoami)"
+
+cargo install adb-wireless
 # Android End
 
-sudo pacman -S --noconfirm rust
 sudo pacman -S --noconfirm python-pip python-pipx uv
 sudo pacman -S pyenv
 
