@@ -119,6 +119,12 @@ sudo usermod -aG android-sdk "$(whoami)"
 
 sudo pacman -S --noconfirm rust
 sudo pacman -S --noconfirm python-pip python-pipx uv
+sudo pacman -S pyenv
+
+export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
+pyenv install 3.14.0 -s
+pyenv global 3.14.0
+git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
 
 pipx install sqlfluff
 
