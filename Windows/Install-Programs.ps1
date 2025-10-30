@@ -4,7 +4,6 @@ try {
     winget configure -f .\Windows\Configs\programs.winget --accept-configuration-agreements --nowarn
 
     # Missing from WinGet
-    choco install sqltoolbelt -y
     choco install mingw -y
     choco install android-sdk -y
 
