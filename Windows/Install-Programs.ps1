@@ -15,30 +15,40 @@ try {
     python -m pipx ensurepath
     Refresh-Path;
     pipx install sqlfluff
+
+    pnpm setup;
+    $env:PNPM_HOME = [System.Environment]::GetEnvironmentVariable('PNPM_HOME', 'User')
+    Refresh-Path
+    if (-not (pnpm list -g vsts-npm-auth | Select-String 'vsts-npm-auth')) {
+        pnpm install -g vsts-npm-auth
+    }
+    else {
+        Write-Host "vsts-npm-auth is already installed globally for pnpm." -ForegroundColor Yellow
+    }
 }
 catch {
     Write-Host "Failed to install base programs: $_" -ForegroundColor Yellow
 }
 
-try {
-    # Teams for Business (Not on Choco)
-    Write-Host "Installing Microsoft Teams for Buisness" -ForegroundColor Green
-    $teamsDownloadUrl = "https://go.microsoft.com/fwlink/?linkid=2187327&Lmsrc=groupChatMarketingPageWeb&Cmpid=directDownloadWin64&clcid=0x409&culture=en-us&country=us"
-    $teamsDestPath = "C:\TeamsInstaller.exe"
-    Invoke-WebRequest -Uri $teamsDownloadUrl -OutFile $teamsDestPath
-    Start-Process -FilePath $teamsDestPath -Args "/s" -NoNewWindow -Wait
+# try {
+#     # Teams for Business (Not on Choco)
+#     Write-Host "Installing Microsoft Teams for Buisness" -ForegroundColor Green
+#     $teamsDownloadUrl = "https://go.microsoft.com/fwlink/?linkid=2187327&Lmsrc=groupChatMarketingPageWeb&Cmpid=directDownloadWin64&clcid=0x409&culture=en-us&country=us"
+#     $teamsDestPath = "C:\TeamsInstaller.exe"
+#     Invoke-WebRequest -Uri $teamsDownloadUrl -OutFile $teamsDestPath
+#     Start-Process -FilePath $teamsDestPath -Args "/s" -NoNewWindow -Wait
 
-    while (Get-Process "TeamsInstaller" -ErrorAction SilentlyContinue) {
-        Write-Host "Waiting for Teams installation to complete..."
-        Start-Sleep -Seconds 5
-    }
+#     while (Get-Process "TeamsInstaller" -ErrorAction SilentlyContinue) {
+#         Write-Host "Waiting for Teams installation to complete..."
+#         Start-Sleep -Seconds 5
+#     }
 
-    Remove-Item -Path $teamsDestPath
-    Write-Host "Microsoft Teams for Buisness has been installed."
-}
-catch {
-    Write-Host "Failed to install Microsoft Teams for Buisness: $_" -ForegroundColor Yellow
-}
+#     Remove-Item -Path $teamsDestPath
+#     Write-Host "Microsoft Teams for Buisness has been installed."
+# }
+# catch {
+#     Write-Host "Failed to install Microsoft Teams for Buisness: $_" -ForegroundColor Yellow
+# }
 
 Refresh-Path
 

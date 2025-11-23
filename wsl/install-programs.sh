@@ -122,12 +122,6 @@ cargo install adb-wireless
 # Android End
 
 sudo pacman -S --noconfirm python-pip python-pipx uv
-sudo pacman -S pyenv
-
-export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
-pyenv install 3.14.0 -s
-pyenv global 3.14.0
-git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
 
 pipx install sqlfluff
 
@@ -138,6 +132,9 @@ sudo pacman -S --noconfirm helm
 go install sigs.k8s.io/kind@v0.29.0
 
 curl -s https://ohmyposh.dev/install.sh | bash -s
+
+info "Setup pnpm"
+pnpm setup
 
 popd || exit
 rm -rf ~/tmp

@@ -17,6 +17,13 @@ properties:
         id: Brave.Brave
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Arc
+      directives:
+        securityContext: elevated
+      settings:
+        id: TheBrowserCompany.Arc
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Firefox
       directives:
         securityContext: elevated

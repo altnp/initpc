@@ -20,7 +20,6 @@ try {
     . .\Windows\Install-Programs.ps1
     Refresh-Path
     . .\Windows\Configure-PowershellCore.ps1
-    . .\Windows\Configure-Package-Sources.ps1
     . .\Windows\Configure-SourceControl.ps1
     . .\Windows\Configure-NerdFonts.ps1
     . .\Windows\Configure-Windows-Settings.ps1

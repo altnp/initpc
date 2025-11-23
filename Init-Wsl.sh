@@ -10,7 +10,6 @@ done
 . ./wsl/install-programs.sh
 . ./wsl/configure-ssh-key.sh
 . ./wsl/configure-git.sh
-. ./wsl/configure-package-sources.sh
 . ./wsl/configure-dotfiles.sh
 . ./wsl/configure-zsh.sh
 . ./wsl/configure-android-symlinks.sh

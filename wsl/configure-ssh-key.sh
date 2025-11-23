@@ -13,9 +13,5 @@ if confirm_action $'\nWould you like to import the key into github?'; then
     powershell.exe -c "Start-Process https://github.com/settings/keys"
 fi
 
-if confirm_action $'\nWould you like to import the key into T-CETRA Azure Devops?'; then
-    powershell.exe -c "Start-Process https://dev.azure.com/Tcetra/_usersSettings/keys"
-fi
-
 info "Press Enter to continue..."
 read -r

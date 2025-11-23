@@ -1,6 +1,7 @@
 Write-Header "Setting up Windows"
 
 try {
+    winget configure --enable
     winget configure -f .\Windows\Configs\windows-features.winget --accept-configuration-agreements --nowarn
 
     Write-Host "Enable Hyper-V"

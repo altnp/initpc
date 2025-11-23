@@ -14,7 +14,8 @@ try {
         New-Item -ItemType Directory -Path $reposDir -Force | Out-Null
         New-Item -ItemType Directory -Path (Join-Path $reposDir 'Pvt') -Force | Out-Null
         New-Item -ItemType Directory -Path (Join-Path $reposDir 'OSS') -Force | Out-Null
-        New-Item -ItemType Directory -Path (Join-Path $reposDir 'Tcetra') -Force | Out-Null
+        New-Item -ItemType Directory -Path (Join-Path $reposDir 'Local') -Force | Out-Null
+        New-Item -ItemType Directory -Path (Join-Path $reposDir 'Yipit') -Force | Out-Null
     }
     else {
         Write-Host "Dotfiles already cloned" -ForegroundColor Yellow

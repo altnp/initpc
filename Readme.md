@@ -13,7 +13,7 @@ start-process powershell.exe -verb RunAs; exit;
 - Install Git
 
 ```
-winget install -e -id Git.Git
+winget install -e --id Git.Git
 
 start-process powershell.exe -verb RunAs; exit;
 ```

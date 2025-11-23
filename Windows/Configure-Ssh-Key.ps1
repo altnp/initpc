@@ -14,10 +14,6 @@ if (-not (Test-Path $sshKeyPath)) {
     if (Confirm-Action "`nWould you like to import the key into github?") {
         Start-Process "https://github.com/settings/keys"
     }
-
-    if (Confirm-Action "`nWould you like to import the key into T-CETRA Azure Devops?") {
-        Start-Process "https://dev.azure.com/Tcetra/_usersSettings/keys"
-    }
 }
 else {
     Write-Host "SSH Key already exists at $sshKeyPath. Skipping key generation." -ForegroundColor Yellow
