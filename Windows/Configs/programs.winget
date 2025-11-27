@@ -480,13 +480,6 @@ properties:
         id: Bitwarden.Bitwarden
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Bitwarden CLI
-      directives:
-        securityContext: elevated
-      settings:
-        id: Bitwarden.CLI
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: ChatGPT
       directives:
         securityContext: elevated

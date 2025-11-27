@@ -70,7 +70,6 @@ npm install -g yo
 npm install -g tsx
 npm install -g nx
 npm install -g vsce
-npm install -g @bitwarden/cli
 
 curl -L https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
 chmod +x dotnet-install.sh
@@ -120,8 +119,6 @@ sudo usermod -aG android-sdk "$(whoami)"
 
 cargo install adb-wireless
 # Android End
-
-sudo pacman -S --noconfirm python-pip python-pipx uv
 
 pipx install sqlfluff
 

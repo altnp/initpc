@@ -1,10 +1,6 @@
 #!/bin/bash
 write_header "Configuring dotfiles..."
 
-info "Sign into Bitwarden"
-bw_session="$(bw login --raw)"
-export BW_SESSION="$bw_session"
-
 chezmoi init git@github.com:altnp/dotfiles.git
 chezmoi apply
 

@@ -3,9 +3,6 @@ Write-Header "Cloning dotfiles..."
 try {
     if (-not (Test-Path "$env:USERPROFILE\.local\share\chezmoi")) {
 
-        $bwSession = bw login --raw
-        $env:BW_SESSION = $bwSession
-
         chezmoi init git@github.com:altnp/dotfiles.git
         chezmoi apply
 
